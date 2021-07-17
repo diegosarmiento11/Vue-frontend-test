@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1 class="welcome">{{ msg }}</h1>
     <p>
       A las mejores pizzas del país
     </p>
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: "Welcome",
+  name: 'Welcome',
   props: {
     msg: String,
   },
@@ -34,5 +34,19 @@ li {
 }
 a {
   color: #42b983;
+}
+.welcome {
+  color: black;
+}
+@media screen and (min-width: 1439px){
+  .welcome {
+    margin: 15px 0px;
+  }
+  .hello{
+    font-size: 1.3em;
+  }
+  p {
+    margin-bottom: 40px;
+  }
 }
 </style>

@@ -1,19 +1,22 @@
 <template>
   <div class="home">
-    <img class="pizza-logo" alt="Vue logo" src="https://robin-food-images.s3.amazonaws.com/Login-Best-Pizza.png" />
-    <Welcome 
-    msg="Bienvenido" 
-    />
-    <Login-form/>
+    <div class="form-container">
+      <img 
+      class="pizza-logo" 
+      alt="Vue logo" 
+      src="https://robin-food-images.s3.amazonaws.com/Login-Best-Pizza.png" />
+      <Welcome 
+      msg="Bienvenido"
+      />
+      <Login-form/>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-
-import Welcome from '../components/Welcome.vue';
-import LoginForm from '../components/LoginForm.vue';
-
+import Welcome from "../components/Welcome.vue";
+import LoginForm from "../components/LoginForm.vue";
 
 export default {
   name: "Login",
@@ -26,11 +29,53 @@ export default {
 
 <style scoped>
   .home {
-    /* border: 1px solid black; */
+    margin: 0 auto;
+    padding: 0 auto;
   }
-
+  .form-container {
+    margin: 15px;
+    border: 3px solid black;
+    border-radius: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
   .pizza-logo {
     width: 250px;
     height: 180px;
+  }
+
+  @media screen and (min-width: 1023px){
+    .home {
+      width: 55%;
+      position: absolute;
+      z-index: 2;
+      top: 0px;
+      right: 0px;
+    }
+    .form-container{
+      background-color: white;
+      padding: 50px 100px 30px 100px;
+      margin: 0 auto;
+      border: none;
+      border-radius: 0px;
+      height: 90vh;
+    }
+  }
+  @media screen and (min-width: 1439px){
+    .home {
+      width: 55%;
+      position: absolute;
+      z-index: 2;
+      top: 0px;
+      right: 0px;
+    }
+    .form-container{
+      background-color: white;
+      padding: 100px 120px 0px 120px;
+      margin: 0 auto;
+      border: none;
+      border-radius: 0px;
+      height: 90vh;
+    }
   }
 </style>

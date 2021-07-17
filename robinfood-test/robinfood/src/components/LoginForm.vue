@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'LoginForm',
+  name: "LoginForm",
   props: {}
 }
 </script>
@@ -48,15 +48,17 @@ export default {
     width: 80%;
     padding: 11px;
     border: none;
+    outline: none;
   }
   .pass-login {
     width: 80%;
     padding: 11px;
     border: none;
+    outline: none;
   }
   .register-images{
-    max-height: 20px;
-    max-width: 20px;
+    height: 20px;
+    width: 20px;
   }
   .images-container{
     margin: 0;
@@ -66,6 +68,7 @@ export default {
     margin: 25px;
     font-size: .9em;
     color: black;
+    font-weight: bold;
   }
   .login-button {
     width: 270px;
@@ -74,7 +77,30 @@ export default {
     font-family: 'Montserrat';
     font-weight: bold;
     outline: none;
-    border: none;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border: 1px;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  }
+
+  @media screen and (min-width: 1439px) {
+    a {
+      font-size: 1.1em;
+    }
+    .forget-pass {
+      margin: 40px 0px
+    }
+    .login-button {
+      width: 410px;
+      height: 60px;
+      font-size: 1em;
+    }
+    .data-container{
+      width: 410px;
+      height: 60px;
+    }
+    .register-images{
+      width: 30px;
+      height: 30px;
+    }
   }
 </style>
