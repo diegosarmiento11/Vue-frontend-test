@@ -8,7 +8,8 @@
       <Welcome 
       msg="Bienvenido"
       />
-      <Login-form/>
+      <Login-form
+      pass="Olvidaste tu contraseña?"/>
     </div>
   </div>
 </template>

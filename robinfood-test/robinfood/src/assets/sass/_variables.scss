@@ -13,27 +13,21 @@ $succes-color: #2F71F7;
 
 // Tipografía
 $basefont: 'Montserrat', sans-serif;
-$basefontsize: 40px;
-$listfontsize: 20px;
 
 // button 
 
-$buttoncolor: $white-color;
-$buttonbackgroundcolor: $secondary-color;
 $buttonfontsize: 15px;
+$border-radius: 3px;
 
 // Constantes
 
-$border-radius: 40px;
 $padding: 24px;
 $page-max-width: 800px;
 $list-style: none;
 
-// Media Queries
+// Media Queries - mobile first
 
-$fourk: 2559px;
+$macbook: 1439px;
 $laptop: 1023px;
 $tablet: 767px;
-$cellphone1: 479px;
 $xiaomi: 419px;
-$cellphone2: 320px;
