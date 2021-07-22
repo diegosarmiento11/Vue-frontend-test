@@ -15,9 +15,11 @@
       </div>
     </form>
     <p class="forget-pass">
-      <a href="http://eidamakeup.com">Olvidaste tu contraseña?</a>
+      <a href="/">{{pass}}</a>
     </p>
-    <button class="login-button" type="button">Iniciar sesión</button>
+    <router-link to="Menu">
+      <button class="login-button" type="button">Iniciar sesión</button>
+    </router-link>
   </div>
 </template>
 
@@ -25,13 +27,17 @@
 <script>
 export default {
   name: "LoginForm",
-  props: {}
+  props: {
+    pass: String,
+  }
 }
 </script>
 
 
 
 <style lang="scss">
+@import '../assets/styles.scss';
+
   a {
     text-decoration: none;
   }
@@ -42,19 +48,13 @@ export default {
     height: 45px;
     border: 1px solid#CDCDCD;
     margin-top: 10px;
-    border-radius: 3px;
+    border-radius: $border-radius;
   }
   .user-login {
-    width: 80%;
-    padding: 11px;
-    border: none;
-    outline: none;
+   @include Input;
   }
   .pass-login {
-    width: 80%;
-    padding: 11px;
-    border: none;
-    outline: none;
+    @include Input;
   }
   .register-images{
     height: 20px;
@@ -78,7 +78,7 @@ export default {
     font-weight: bold;
     outline: none;
     border: 1px;
-    border-radius: 4px;
+    border-radius: $border-radius;;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   }
 
