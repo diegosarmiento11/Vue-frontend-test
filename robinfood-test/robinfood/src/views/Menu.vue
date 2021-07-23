@@ -5,8 +5,12 @@
     </div>
     <h2 class="menu-title">{{h2}}</h2>
     <p class="menu-p2">{{menu2}}</p>
+    <Search 
+      title="Busca tu restaurante favorito aquí"
+      v-bind:stores="stores"
+    />
     <Menu-cards 
-    v-bind:assets="assets"
+      v-bind:stores="stores"
     />
     <Footer/>
   </div>
@@ -16,6 +20,7 @@
 
 import MenuCards from "../components/MenuCards.vue";
 import Footer from "../components/Footer.vue";
+import Search from "../components/Search.vue";
 
 import api from '../api';
 
@@ -25,24 +30,26 @@ export default {
   components: {
     MenuCards,
     Footer,
+    Search,
   },
   data () {
     return {
-      assets: [],
+      stores: [],
       p: "Pizzerías",
       h2: "Tiendas",
       menu2: "Escoge tu pizzería favorita"
       }
   },
   created () {
-    api.getAssets()
-      .then(assets => this.assets = assets)
+    api.getStores()
+      .then(stores => this.stores = stores)
   }
 }
 </script>
 
 <style lang="scss">
 @import '../assets/styles.scss';
+
   .menu-p-container {
     margin: 0 auto;
     width: 30%;

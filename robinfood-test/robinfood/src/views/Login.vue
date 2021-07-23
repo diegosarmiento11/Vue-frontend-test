@@ -2,14 +2,15 @@
   <div class="home">
     <div class="form-container">
       <img 
-      class="pizza-logo" 
-      alt="Vue logo" 
-      src="https://robin-food-images.s3.amazonaws.com/Login-Best-Pizza.png" />
+        class="pizza-logo" 
+        alt="Vue logo" 
+        src="https://robin-food-images.s3.amazonaws.com/Login-Best-Pizza.png" 
+      />
       <Welcome 
-      msg="Bienvenido"
+        msg="Bienvenido"
       />
       <Login-form
-      pass="Olvidaste tu contraseña?"/>
+        pass="Olvidaste tu contraseña?"/>
     </div>
   </div>
 </template>

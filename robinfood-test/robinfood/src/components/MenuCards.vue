@@ -1,50 +1,40 @@
 <template>
   <div class="card-container">
-    <div class="card-image-container">
-      <img class="card-image" v-bind:src="image1" alt="Pizzería capitán America">
-    </div>
-    <div class="card-image-container">
-      <img class="card-image" v-bind:src="image2" alt="Pizzería Iron Man">
-    </div>
-    <div class="card-image-container">
-      <img class="card-image" v-bind:src="image3" alt="Pizzería thor">
-    </div>
-    <div class="card-image-container">
-      <img class="card-image" v-bind:src="image4" alt="Pizzería Black Widow">
-    </div>
-    <div class="card-image-container">
-      <img class="card-image" v-bind:src="image5" alt="Pizzería Spider Man">
-    </div>
     <div
       class="card"
-      v-for="asset in assets"
-      v-bind:key="asset.id"
+      v-for="store in stores"
+      v-bind:key="store.id"
     >
-      <h4 class="card-title">{{asset.name}}</h4>
-      <p class="card-p">{{asset.address}}</p>
+      <div class="card-image-container">
+        <img v-on:click="goToProducts(store.id)" class="card-image" v-bind:src="`https://robin-food-images.s3.amazonaws.com/${store.id}.png`" alt="Nombre de pizzería">
+      </div>
+      <h4 class="card-title">{{store.name}}</h4>
+      <p class="card-p">{{store.address}}</p>
     </div>
   </div>
 </template>
 
 <script>
 
+
+//router.push('products', {params: { userId: '123' } })
+
 export default {
   name: "MenuCards",
-  data: function () {
-    return {
-      image1: "https://robin-food-images.s3.amazonaws.com/Panos_pizza.png",
-      image2: "https://robin-food-images.s3.amazonaws.com/Sbarro.png",
-      image3: "https://robin-food-images.s3.amazonaws.com/pizzeria_camion.png",
-      image4: "https://robin-food-images.s3.amazonaws.com/voglia_di_pizza.png",
-      image5: "https://robin-food-images.s3.amazonaws.com/stroller_pizza.png"
-    }
-  },
   props: {
-    assets: {
+    stores: {
       type: Array,
       default: () => []
     },
+  },
+  methods: {
+    goToProducts (storeId) {
+      // this.$router.push('Products', {params: { storeId: storeId } })
+      // storeId = 1
+      this.$router.push({ path: 'Products', params: { storeId: storeId } })
+    }
   }
+  
 }
 </script>
 
@@ -69,6 +59,17 @@ export default {
     display: flex;
     flex-wrap: wrap;
   }
+  .card-image {
+    width: 110px;
+    height: 110px;
+  }
+  .card-title {
+    font-size: 0.68em;
+  }
+  .card-p {
+    font-size: 0.5em;
+    text-align: start;
+  }
 }
 @media screen and (min-width: $laptop) {
   .card-image {
@@ -86,16 +87,26 @@ export default {
 
 @media screen and (min-width: $macbook){
   .card-container {
-  flex-wrap: wrap;
-  padding: 40px 160px 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 50px 20px 40px;
+  margin: auto;
+  margin: 120px 0px 170px 0px;
   }
   .card-image {
-  width: 150px;
-  height: 150px;
-  gap: 40px;
+  width: 110px;
+  height: 110px;
   }
   .card-image-container {
-  height: 40px;
+  height: 90px;
+  }
+  .card-title {
+    font-size: 0.7em;
+  }
+  .card-p {
+    font-size: 0.73em;
+    text-align: start;
   }
 }
 </style>
