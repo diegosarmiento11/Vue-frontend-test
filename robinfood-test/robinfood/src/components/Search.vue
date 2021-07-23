@@ -1,17 +1,23 @@
 <template>
-  <div>
-    <h3>{{title}}</h3>
-    <input v-on:change="findStoreById(storeName)" value="" type="text" v-model="storeName">
-    <h1 v-if="currentStore.length > 0 ">
+  <div class="search-container">
+    <input 
+      class="search-input"
+      placeholder="Busca tu restaurante favorito aquí"
+      v-on:change="findStoreById(storeName)" 
+      value="" 
+      type="text" 
+      v-model="storeName">
+    <h1 
+      v-if="currentStore.length > 0 ">
       <Menu-cards
         v-bind:stores="currentStore"/>
     </h1>
-    <h1 v-else-if="currentStore.length == 0">
-      <h5>Los únicos disponibles son :</h5>
-    </h1>
+    <p 
+      v-else-if="currentStore.length >= 0">
+    <p class="search-p">Otros restaurantes disponibles :<p>
+    </p>
   </div>
 </template>
-
 
 <script>
 import MenuCards from './MenuCards.vue'
@@ -44,5 +50,32 @@ export default {
 
 
 <style lang="scss">
+@import "../assets/styles.scss";
 
+    .menu-title-two {
+    text-align: start;
+  }
+  .search-container {
+    justify-content: start;
+  }
+  .search-input {
+    display: flex;
+    width: 250px;
+    height: 45px;
+    outline: none;
+    border: 0.4px solid black;
+    border-radius: 20px;
+    padding-left: 20px;
+    margin: 0 auto;
+  }
+  .search-p {
+    text-align: start;
+    font-weight: bold;
+  }
+  @media screen and (min-width: $tablet) {
+     .search-input {
+    width: 300px;
+    height: 35px;
+  }
+}
 </style>

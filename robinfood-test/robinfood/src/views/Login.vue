@@ -16,7 +16,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import Welcome from "../components/Welcome.vue";
 import LoginForm from "../components/LoginForm.vue";
 
@@ -29,7 +28,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../assets/styles.scss";
+
   .home {
     margin: 0 auto;
     padding: 0 auto;
@@ -46,7 +47,7 @@ export default {
     height: 180px;
   }
 
-  @media screen and (min-width: 1023px){
+  @media screen and (min-width: $laptop){
     .home {
       width: 55%;
       position: absolute;
@@ -63,7 +64,7 @@ export default {
       height: 90vh;
     }
   }
-  @media screen and (min-width: 1439px){
+  @media screen and (min-width: $macbook){
     .home {
       width: 55%;
       position: absolute;

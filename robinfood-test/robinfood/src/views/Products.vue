@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="home">
     Lista de productos
-    <h3>{{this.$router.params}}</h3>
+    <h3>{{$router.storeId}}</h3>
   </div>
 </template>
 
@@ -16,7 +16,17 @@ export default {
 }
 </script>
 
-
 <style lang="scss">
+@import "../assets/styles.scss";
+
+@media  screen and (min-width: $laptop) {
+  .home {
+    width: 55%;
+    position: absolute;
+    z-index: 2;
+    top: 0px;
+    right: 0px;
+  }
+}
 
 </style>

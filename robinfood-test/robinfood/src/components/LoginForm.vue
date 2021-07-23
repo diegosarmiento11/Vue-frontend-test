@@ -2,23 +2,34 @@
   <div>
     <form action="">
       <div class="data-container">
-        <input v-model="email" class="user-login" type="email" placeholder="Usuario">
+        <input 
+          v-model="email" 
+          class="user-login" 
+          type="email" 
+          placeholder="Usuario">
         <figure class="images-container">
-          <img class="register-images" src="https://robin-food-images.s3.amazonaws.com/ic_usuario.png" alt="" srcset="">
+          <img 
+            class="register-images" 
+            src="https://robin-food-images.s3.amazonaws.com/ic_usuario.png" 
+            alt="" >
         </figure>
       </div>
       <div class="data-container">
-        <input v-model="password" class="pass-login" type="password" placeholder="Contraseña">
+        <input 
+          v-model="password" 
+          class="pass-login" 
+          type="password" 
+          placeholder="Contraseña">
         <figure class="images-container">
-          <img class="register-images" src="https://robin-food-images.s3.amazonaws.com/ic_contrase%C2%A7a.png" alt="" srcset="">
+          <img 
+            class="register-images" 
+            src="https://robin-food-images.s3.amazonaws.com/ic_contrase%C2%A7a.png" alt="register-image" >
         </figure>
       </div>
     </form>
     <p class="forget-pass">
       <a href="/">{{pass}}</a>
     </p>
-    <!-- <router-link  v-if="userExist" to="Menu">
-    </router-link> -->
       <button 
         v-on:click="validateUser(email, password)"
         class="login-button" 
@@ -59,11 +70,8 @@ export default {
 }
 </script>
 
-
-
 <style lang="scss">
 @import '../assets/styles.scss';
-
   a {
     text-decoration: none;
   }
