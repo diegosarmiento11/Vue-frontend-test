@@ -8,15 +8,12 @@
   </div>
 </template>
 
-
 <style lang="scss">
-
 @import '../src/assets/styles.scss';
 body {
   padding: 0;
   margin: 0
 }
-
 #app {
   font-family: $basefont;
   -webkit-font-smoothing: antialiased;
@@ -24,7 +21,6 @@ body {
   text-align: center;
   color: #2c3e50;
 }
-
 #nav {
   a {
     font-weight: bold;

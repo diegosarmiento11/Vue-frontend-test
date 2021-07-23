@@ -58,11 +58,16 @@ export default {
   width: 32px;
   height: 30px;
 }
+@media screen and (min-width: $laptop) {
+  .footer-container {
+    margin-top: 10px;
+  }
+}
 
 
 @media screen and (min-width: $macbook) {
   .footer-container {
-    margin: 0;
+    margin-top: 30px;
   }
 }
 </style>

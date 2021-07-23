@@ -6,7 +6,10 @@
       v-bind:key="store.id"
     >
       <div class="card-image-container">
-        <img v-on:click="goToProducts(store.id)" class="card-image" v-bind:src="`https://robin-food-images.s3.amazonaws.com/${store.id}.png`" alt="Nombre de pizzería">
+        <img 
+        v-on:click="goToProducts(store.id)" 
+        class="card-image" 
+        v-bind:src="`https://robin-food-images.s3.amazonaws.com/${store.id}.png`" alt="Nombre de pizzería">
       </div>
       <h4 class="card-title">{{store.name}}</h4>
       <p class="card-p">{{store.address}}</p>
@@ -34,7 +37,6 @@ export default {
       this.$router.push({ path: 'Products', params: { storeId: storeId } })
     }
   }
-  
 }
 </script>
 
@@ -47,7 +49,7 @@ export default {
   @include Card;
 }
 .card-container div {
-  padding: 15px;
+  padding: 9px;
 }
 .card-image {
   width: 220px;
@@ -58,6 +60,8 @@ export default {
   .card-container {
     display: flex;
     flex-wrap: wrap;
+    width: 80%;
+    padding: 0px;
   }
   .card-image {
     width: 110px;
@@ -73,8 +77,8 @@ export default {
 }
 @media screen and (min-width: $laptop) {
   .card-image {
-    width: 110px;
-    height: 110px;
+    width: 90px;
+    height: 90px;
   }
   .card-title {
     font-size: 0.75em;
@@ -83,30 +87,58 @@ export default {
     font-size: 0.5em;
     text-align: start;
   }
+  .card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 100px 0px 40px;
+    margin: auto;
+    margin: 0px;
+  }
+  .card {
+    padding: 0px;
+  }
+  .card-title {
+    font-size: 0.8em;
+    text-align: start;
+    padding-left: 7px;
+    margin: 0;
+  }
 }
 
 @media screen and (min-width: $macbook){
+  .card-image {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+  }
   .card-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 50px 20px 40px;
+  padding: 0px 120px 20px 40px;
   margin: auto;
-  margin: 120px 0px 170px 0px;
-  }
-  .card-image {
-  width: 110px;
-  height: 110px;
+  margin: 35px 0px 115px 0px;
   }
   .card-image-container {
-  height: 90px;
+  height: 140px;
+  padding: 0px;
   }
-  .card-title {
-    font-size: 0.7em;
+  .card {
+    padding: 10px;
+    height: 200px;
   }
   .card-p {
     font-size: 0.73em;
     text-align: start;
+    padding-left: 7px;
+    margin: 10px;
+  }
+  .card-title {
+    font-size: 0.8em;
+    text-align: start;
+    padding-left: 7px;
+    margin: 10px;
   }
 }
 </style>
