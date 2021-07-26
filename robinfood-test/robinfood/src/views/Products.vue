@@ -1,17 +1,25 @@
 <template>
   <div class="home">
-    Lista de productos
-    <h3>{{$router.storeId}}</h3>
+    <products-type
+      v-bind:stores="stores"/>
   </div>
 </template>
 
 <script>
+import ProductsType from '../components/ProductsType.vue';
+import api from "../api";
+
 export default {
+  components: { ProductsType },
   name: "Products",
-  props: {
-    storeId: {
-      type: Array,
-    } 
+  data: function () {
+    return {
+      stores: []
+    }
+  },
+  created () {
+    api.getStores()
+      .then(stores => this.stores = stores)
   }
 }
 </script>
