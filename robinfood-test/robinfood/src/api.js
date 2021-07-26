@@ -11,7 +11,6 @@ function getUsers () {
     .then(res => res.response.users)
 }
 
-
 export default {
  getStores,
  getUsers

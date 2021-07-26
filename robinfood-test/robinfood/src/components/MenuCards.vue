@@ -34,7 +34,7 @@ export default {
     goToProducts (storeId) {
       // this.$router.push('Products', {params: { storeId: storeId } })
       // storeId = 1
-      this.$router.push({ path: 'Products', params: { storeId: storeId } })
+      this.$router.push({ path: 'Products', params: { storeId: storeId.id } })
     }
   }
 }
